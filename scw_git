@@ -1,0 +1,78 @@
+%git diagnostic
+git satus 
+git --help
+git log %what you did, what time, who did it, comment on version
+git diff %changes bw modified versions before they are commited
+git diff 
+mkdir SWC 
+cd SWD
+mkdir planets
+
+%initiate git for each project in planets dir
+%Initialized empty Git repository in /home/jessica/SWC/planets/.git/  NEVER TOUCH THIS DIR
+git init 
+
+% list git dir shows hidden files -a
+ls -a 
+
+%make text file, now git knows that the file mars exists
+gedit mars.txt 
+
+%HOW TO COMMIT VERSIONS
+
+%initiate git on file #set up to commit
+git add mars.txt 
+%now actually commit a file and add a comment on the version
+git commit -m "starting to think about mars" 
+
+%the finer grain your commits are, the more reable usable your versions are
+
+
+%HOW TO RECOVER
+
+%goes back to the previous version, HEAD = give me the most recent committed version
+git checkout HEAD mars.txt
+
+%goes back to ~1 points to 1 further from the previous version
+git checkout HEAD~1 mars.txt
+
+%goes back to a specific commit seen it git log
+git checkout 0699fb2f7acc3dfba2f8da37a8e3c82752abebab mars.txt
+
+%if you want to keep any of these versions to should add and commit to your git again
+
+%%%%
+mkdir results
+touch adat bdat cdat results/xdat results/zdat %add these files
+
+%tell git to ignore certain files that you don't ever want to add to version control
+gedit .gitignore %add files
+git add .gitignore
+git commit -m "Added to the ignore file"
+
+
+
+%%% GITHUB %%%%
+
+% to add repository to github, tell git where it will be
+git remote add origin https://github.com/jnephin/planets.git
+%what are we allowed to do with this repo
+git remote -v
+%add it to github
+git push origin master
+
+%get changes made online and accepted
+git pull origin master
+
+%get a copy of the online git repo that you put on git
+git clone https://github.com/jnephin/planets.git
+
+
+%%% GIT conflict control %%%
+
+
+
+
+
+
+
